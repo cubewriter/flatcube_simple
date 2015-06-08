@@ -1,0 +1,492 @@
+doctype transitional
+html(class='no-js', lang='en')
+  head
+    title [##_title_##] :: [##_page_title_##]
+    meta(http-equiv='Content-Type', content='text/html; charset=utf-8')
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    link(rel='alternate', type='application/rss+xml', title='[##_title_##]', href='[##_rss_url_##]')
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css")
+    link(rel="stylesheet", href="css/app.css")
+    link(rel='stylesheet', media='screen', type='text/css', href='./style.css')
+    link(rel='shortcut icon', href='[##_blog_link_##]favicon.ico')
+    script(type="text/javascript", src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js")
+
+  body
+    s_t3
+
+      .row
+
+        #headerBox.columns
+          #header
+            h1
+              a(href='[##_blog_link_##]', title='[##_title_##]') [##_title_##]
+            //- .blogMenu [##_blog_menu_##]
+        // header close
+      hr
+
+
+      .row
+
+        nav.top-bar(data-topbar='', role='navigation')
+          ul.title-area
+            li.name
+              h1
+                //- a(href='#') My Site
+            // Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone
+            li.toggle-topbar.menu-icon
+              a(href='#')
+                span Menu
+          section.top-bar-section [##_blog_menu_##]
+
+
+            // Right Nav Section
+
+
+
+
+            //- ul.right
+            //-   li.active
+            //-     a(href='#') Right Button Active
+            //-   li.has-dropdown
+            //-     a(href='#') Right Button Dropdown
+            //-     ul.dropdown
+            //-       li
+            //-         a(href='#') First link in dropdown
+            //-       li.active
+            //-         a(href='#') Active link in dropdown
+            //- // Left Nav Section
+            //- ul.left
+            //-   li
+            //-     a(href='#') Left Nav Button
+
+
+
+
+
+
+
+      #container.row
+
+        #content.columns.small-12.medium-8
+          s_list
+            #searchList.nonEntry
+              h3 '[##_list_conform_##]'에 해당되는 글 [##_list_count_##]건
+              ol
+                s_list_rep
+                  li
+                    span.date [##_list_rep_regdate_##]
+                    a(href='[##_list_rep_link_##]') [##_list_rep_title_##]
+                    span.cnt [##_list_rep_rp_cnt_##]
+          s_rplist
+            #searchRplist.nonEntry
+              h3 '[##_rplist_conform_##]'에 해당되는 댓글 [##_rplist_count_##]건
+              ol
+                s_rplist_rep
+                  li
+                    span.date [##_rplist_rep_regdate_##]
+                    a(href='[##_rplist_rep_link_##]') [##_rplist_rep_body_##]
+                    span.cnt [##_rplist_rep_rp_cnt_##]
+                    span.name [##_rplist_rep_name_##]
+          s_local
+            #localog.nonEntry
+              h3 지역로그
+              s_local_spot_rep
+                .spot(style='margin-left: [##_local_spot_depth_##]px')
+                  | [##_local_spot_##]
+              s_local_info_rep
+                .info(style='margin-left: [##_local_info_depth_##]px')
+                  a(href='[##_local_info_link_##]') [##_local_info_title_##]
+          s_tag
+            #taglog.nonEntry
+              h3 태그
+              ul
+                s_tag_rep
+                  li
+                    a(href='[##_tag_link_##]', class='[##_tag_class_##]') [##_tag_name_##]
+          s_guest
+            #guestbook.nonEntry
+              h3 방명록을 남겨주세요!
+              s_guest_input_form
+                #guestWrite
+                  s_guest_member
+                    s_guest_form
+                      p
+                        input(type='text', name='[##_guest_input_name_##]', value='[##_guest_name_##]')
+                        label(for='name')  : 이름
+                      p
+                        input(type='password', name='[##_guest_input_password_##]', value='')
+                        label(for='password')  : 패스워드
+                      p
+                        input.homepage(type='text', name='[##_guest_input_homepage_##]', value='[##_guest_homepage_##]')
+                        label(for='homepage')  : 홈페이지
+                  p
+                    textarea(name='[##_guest_textarea_body_##]', cols='55', rows='6')
+                  p
+                    input.submit(type='submit', value='남기기', onclick='[##_guest_onclick_submit_##]')
+                // guestWrite close
+              s_guest_container
+                #guestList
+                  ol
+                    s_guest_rep
+                      li(id='[##_guest_rep_id_##]')
+                        div(class='[##_guest_rep_class_##]')
+                          span.name [##_guest_rep_name_##]
+                          span.date  [##_guest_rep_date_##]
+                          span.control
+                            a.modify(href='#', onclick='[##_guest_rep_onclick_delete_##]')
+                              span 수정/삭제
+                            a.write(href='#', onclick='[##_guest_rep_onclick_reply_##]')
+                              span 댓글쓰기
+                          p [##_guest_rep_desc_##]
+                        s_guest_reply_container
+                          ul
+                            s_guest_reply_rep
+                              li(id='[##_guest_rep_id_##]')
+                                div(class='[##_guest_rep_class_##]')
+                                  span.name [##_guest_rep_name_##]
+                                  span.date  [##_guest_rep_date_##]
+                                  span.control
+                                    a.modify(href='#', onclick='[##_guest_rep_onclick_delete_##]')
+                                      span 수정/삭제
+                                  p [##_guest_rep_desc_##]
+                // guestList close
+            // guestbook close
+          s_notice_rep
+            .entryNotice
+              .titleWrap
+                h2
+                  a(href='[##_notice_rep_link_##]') [##_notice_rep_title_##]
+                span.category 공지사항
+                span.date [##_notice_rep_date_##]
+              .article
+                | [##_notice_rep_desc_##]
+          s_article_protected
+            .entryProtected
+              .titleWrap
+                h2
+                  a(href='[##_article_rep_link_##]') [##_article_rep_title_##]
+                span.date [##_article_rep_date_##]
+              p.text
+                | 보호되어 있는 글입니다.
+                br
+                |           내용을 보시려면 비밀번호를 입력하세요.
+              p
+                label(for='[##_article_password_##]') 비밀번호 ::
+                input(id='[##_article_password_##]', name='[##_article_password_##]', type='password', onkeydown='if (event.keyCode == 13) [##_article_dissolve_##]')
+                input.submit(type='button', value='확인', onclick='[##_article_dissolve_##]')
+          s_article_rep
+            .entry
+              .titleWrap
+                h2
+                  a(href='[##_article_rep_link_##]') [##_article_rep_title_##]
+                span.category
+                  a(href='[##_article_rep_category_link_##]') [##_article_rep_category_##]
+                span.date [##_article_rep_date_##]
+                s_ad_div
+                  .admin
+                    a(href='[##_s_ad_m_link_##]') 수정
+                    |  :
+                    a(href='#', onclick='[##_s_ad_m_onclick_##]') 수정(창으로)
+                    |  |
+                    |                 ([##_s_ad_s1_label_##])→
+                    a(href='#', onclick='[##_s_ad_s2_onclick_##]') [##_s_ad_s2_label_##]
+                    |  |
+                    a(href='#', onclick='[##_s_ad_t_onclick_##]') 관련글(트랙백)
+                    |  |
+                    a(href='#', onclick='[##_s_ad_d_onclick_##]') 삭제
+              // titleWrap close
+              .article
+                | [##_article_rep_desc_##]
+              .author
+                span.text Posted by&nbsp;
+                | [##_article_rep_author_##]
+              s_tag_label
+                .tagTrail
+                  span.tagText TAG
+                  |  [##_tag_label_rep_##]
+              .actionTrail
+                a(href='#tb', onclick='[##_article_rep_tb_link_##]')
+                  s_tb_count
+                    | 트랙백
+                    span.cnt [##_article_rep_tb_cnt_##]
+                    | 개
+                | ,
+                a(href='#rp', onclick='[##_article_rep_rp_link_##]')
+                  s_rp_count
+                    | 댓글
+                    span.cnt [##_article_rep_rp_cnt_##]
+                    | 개가 달렸습니다
+              s_tb
+                .trackback
+                  h3 트랙백 주소 :: [##_tb_address_##]
+                  s_tb_container
+                    ol
+                      s_tb_rep
+                        li(id='[##_tb_rep_id_##]')
+                          h4
+                            | Subject:
+                            a(href='[##_tb_rep_url_##]', onclick='window.open(this.href); return false', rel='external nofollow') [##_tb_rep_title_##]
+                          span.from
+                            | Tracked from
+                            span.name [##_tb_rep_site_##]
+                          span.date [##_tb_rep_date_##]
+                          a.delete(href='#', onclick='[##_tb_rep_onclick_delete_##]; return false')
+                            span 삭제
+                          p [##_tb_rep_desc_##]
+                // trackback close
+              s_rp
+                .comment
+                  h3 댓글을 달아 주세요
+                  .commentList
+                    s_rp_container
+                      ol
+                        s_rp_rep
+                          li(id='[##_rp_rep_id_##]')
+                            div(class='[##_rp_rep_class_##]')
+                              span.name [##_rp_rep_name_##]
+                              span.date  [##_rp_rep_date_##]
+                              span.control
+                                a.address(href='[##_rp_rep_link_##]')
+                                  span 댓글주소
+                                a.modify(href='#', onclick='[##_rp_rep_onclick_delete_##]')
+                                  span 수정/삭제
+                                a.write(href='#', onclick='[##_rp_rep_onclick_reply_##]')
+                                  span 댓글쓰기
+                              p [##_rp_rep_desc_##]
+                            s_rp2_container
+                              ul
+                                s_rp2_rep
+                                  li(id='[##_rp_rep_id_##]')
+                                    div(class='[##_rp_rep_class_##]')
+                                      span.name [##_rp_rep_name_##]
+                                      span.date  [##_rp_rep_date_##]
+                                      span.control
+                                        a.address(href='[##_rp_rep_link_##]')
+                                          span 댓글주소
+                                        a.modify(href='#', onclick='[##_rp_rep_onclick_delete_##]')
+                                          span 수정/삭제
+                                      p [##_rp_rep_desc_##]
+                  // commentList close
+                  s_rp_input_form
+                    .commentWrite
+                      s_rp_member
+                        s_rp_guest
+                          p
+                            input(type='text', name='[##_rp_input_name_##]', value='[##_guest_name_##]')
+                            label(for='name')  : 이름
+                          p
+                            input(type='password', name='[##_rp_input_password_##]', value='')
+                            label(for='password')  : 패스워드
+                          p
+                            input.homepage(type='text', name='[##_rp_input_homepage_##]', value='[##_guest_homepage_##]')
+                            label(for='homepage')  : 홈페이지
+                        p.secretWrap
+                          input.checkbox(type='checkbox', name='[##_rp_input_is_secret_##]')
+                          label(for='secret')  비밀글
+                      p
+                        textarea(name='[##_rp_input_comment_##]', rows='10', cols='50')
+                      p
+                        input.submit(type='submit', value='댓글 달기', onclick='[##_rp_onclick_submit_##]')
+                    // commentWrite close
+                // comment close
+            // entry close
+
+
+          s_paging
+            #paging
+              a([##_prev_page_##] class="[##_no_more_prev_##]" id="prevPage") 이전
+              span.numbox
+                s_paging_rep
+                  a.num([##_paging_rep_link_##]='')  [##_paging_rep_link_num_##]
+              a([##_next_page_##] class="[##_no_more_next_##]" id="nextPage") 다음
+        // content close
+
+
+
+        hr
+        #sidebar.columns.small-12.medium-4
+          s_sidebar
+            // 기본 사이드바
+            s_sidebar_element
+              // 블로그 이미지 모듈
+              #blogImage
+                img(src='[##_image_##]', alt='블로그 이미지')
+            s_sidebar_element
+              // 블로그 설명 모듈
+              #blogDesc
+                | [##_desc_##]
+                span.userID [##_blogger_##]
+            s_sidebar_element
+              // 공지사항 모듈
+              s_rct_notice
+                #notice
+                  ul
+                    s_rct_notice_rep
+                      li
+                        a(href='[##_notice_rep_link_##]') [##_notice_rep_title_##]
+
+
+
+            s_sidebar_element
+              // 검색 모듈
+              #searchBox
+                s_search
+                  input(placeholder="Search", type='text', name='[##_search_name_##]', value='[##_search_text_##]', onkeypress='if (event.keyCode == 13) { [##_search_onclick_submit_##] }')
+                  //- input.submit(value='검색', type='button', onclick='[##_search_onclick_submit_##]')
+
+              //- #searchBox
+              //-   .row
+              //-     .small-12.medium-11.large-11.columns
+              //-       s_search.row.collapse
+              //-         .small-10.columns
+              //-           input(type='text', name='[##_search_name_##]', value='[##_search_text_##]', onkeypress='if (event.keyCode == 13) { [##_search_onclick_submit_##] }')
+              //-         .small-2.columns
+              //-           a.button.postfix(value='검색', type='button', onclick='[##_search_onclick_submit_##]') Go
+
+
+
+
+
+            s_sidebar_element
+              // 관리자 모듈
+              #adminMenu
+                ul
+                  li.tab_admin
+                    a(href='[##_owner_url_##]')
+                      img(src='./images/btn_admin.gif', alt='관리자')
+                  li.tab_write
+                    a(href='[##_owner_url_##]/entry/post')
+                      img(src='./images/btn_write.gif', alt='글쓰기')
+            s_sidebar_element
+              // 카테고리 모듈
+              #category
+                h3 카테고리
+                | [##_category_##]
+            s_sidebar_element
+              // 태그목록 모듈
+              #tagbox
+                h3 태그목록
+                ul
+                  s_random_tags
+                    li
+                      a(href='[##_tag_link_##]', class='[##_tag_class_##]')  [##_tag_name_##]
+            s_sidebar_element
+              // 최근 포스트 모듈
+              #recentPost
+                h3 최근에 올라온 글
+                ul
+                  s_rctps_rep
+                    li
+                      a(href='[##_rctps_rep_link_##]')  [##_rctps_rep_title_##].
+                      span.cnt [##_rctps_rep_rp_cnt_##]
+            s_sidebar_element
+              // 최근 댓글 모듈
+              #recentComment
+                h3 최근에 달린 댓글
+                ul#recentComments
+                  s_rctrp_rep
+                    li
+                      a(href='[##_rctrp_rep_link_##]') [##_rctrp_rep_desc_##].
+                      //- span.info
+                      //-   span.name [##_rctrp_rep_name_##]
+                      //-   span.date [##_rctrp_rep_time_##]
+            s_sidebar_element
+              // 최근 트랙백 모듈
+              #recentTrackback
+                h3 최근에 받은 트랙백
+                ul
+                  s_rcttb_rep
+                    li
+                      a(href='[##_rcttb_rep_link_##]') [##_rcttb_rep_desc_##].
+                      span.info
+                        span.name [##_rcttb_rep_name_##]
+                        span.date [##_rcttb_rep_time_##]
+            s_sidebar_element
+              // 최근 보관함 모듈
+              #archive
+                h3 글 보관함
+                ul
+                  s_archive_rep
+                    li
+                      a(href='[##_archive_rep_link_##]') [##_archive_rep_date_##]
+                      span.cnt ([##_archive_rep_count_##])
+            s_sidebar_element
+              // 달력 모듈
+              #calendar
+                h3 달력
+                |             [##_calendar_##]
+            s_sidebar_element
+              // 링크 모듈
+              #link
+                h3 링크
+                ul
+                  s_link_rep
+                    li
+                      a(href='[##_link_url_##]', onclick='window.open(this.href); return false')  [##_link_site_##].
+            s_sidebar_element
+              // 카운터 모듈
+              #counter
+                ul
+                  li.total Total : [##_count_total_##]
+                  li.today Today : [##_count_today_##]
+                  li.yesterday Yesterday : [##_count_yesterday_##]
+          s_sidebar
+            // 배너 삽입 위치
+            s_sidebar_element
+              // 배너 모듈 - 티스토리
+              #adTistory
+                center
+                  .invite_tistory
+                    a(href='http://www.tistory.com/invitation/', target='_blank') 티스토리 초대신청
+                  a(href='http://www.tistory.com')
+                    img(src='./images/logo_tistory.gif', width='107', height='27', alt='TISTORY')
+                  // <div class="tistoryJoin"><a href="http://www.tistory.com/join">티스토리 가입하기!</a></div>
+            s_sidebar_element
+              // RSS 링크
+              #btnRSS
+                center
+                  a(href='[##_rss_url_##]', onclick='window.open(this.href); return false')
+                    img(src='./images/rss.gif', alt='rss')
+        // sidebar close
+        hr
+        #footer
+          //- .footMenu
+          //-   a(href='[##_localog_link_##]') 지역로그
+          //-   |  :
+          //-   a(href='[##_taglog_link_##]') 태그
+          //-   |  :
+          //-   a(href='[##_blog_link_##]media') 미디어로그
+          //-   |  :
+          //-   a(href='[##_guestbook_link_##]') 방명록
+          //-   |  :
+          //-   a(href='[##_owner_url_##]') 관리자
+          //-   |  :
+          //-   a(href='[##_owner_url_##]/entry/post') 글쓰기
+          .copyright.flatcube_copy
+            //- a(href='[##_blog_link_##]')  [##_blogger_##]
+            //- | 's Blog is
+
+            i.fi-power &nbsp;
+
+            //- | powered by
+            a(href='http://daum.net', onclick='window.open(this.href); return false') Daum /&nbsp;
+
+
+            i.fi-lightbulb
+
+            a(href='http://flatcubefactory.tistory.com/')  Designed by FlatCube Factory
+      // container close
+
+
+
+
+
+
+    script(type="text/javascript", src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js")
+    script(type="text/javascript", src="//cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/js/foundation.min.js")
+    script(type="text/javascript", src="//cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/js/foundation/foundation.topbar.js")
+
+    script.
+      $(document).foundation();
+
+
